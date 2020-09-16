@@ -12,3 +12,5 @@
 	  printf("\n %d %d", sqr(t), t);
 	  return 0;
 	}
+
+	/*CHAMADA POR VALOR E POR REFERÊNCIA*/
