@@ -4,7 +4,7 @@
 	  int vetor[5] = {76, 63, 46, 14, 02}; //Vetor sem classificação
 	  int limite = 5;
 	  printf("\n *---------------------------------------*");
-	  printf("\n *Vetor original (Antes da classificação*");
+	  printf("\n *Vetor original (Antes da classificacao*");
 	  printf("\n *---------------------------------------*");
 	  for (int w = 0; w < limite; w++)
 	  {
@@ -25,7 +25,7 @@
 	} //Aqui termina a classificação por TROCA
 	  printf("\n !!!");
 	  printf("\n *-----------------------------*");
-	  printf("Vetor Classificado por TROCA*");
+	  printf("\n *Vetor Classificado por TROCA* ");
 	  printf("\n *-----------------------------*");
 	  for (int z = 0; z < limite; z++)
 	  {
