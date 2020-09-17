@@ -2,15 +2,9 @@
 #include <string.h>
 
 
-	/*int main(void) {
+	int main(void) {
 	  printf("\n Programa para mostra tamanho string");
 	  printf("\n *----------------------------------*");
-	  printf("\n Espaco alocado = %ld bytes", sizeof("azul e branco") );
-	}*/
-
-    int main() {
-
-
-        return 0;
-    }
+	  printf("\n Espaco alocado = %ld bytes", sizeof("Este é um exemplo de String")-1 );
+	}
 
