@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 	int vetor[5] = {76, 63, 46, 14, 02};
 	int limite = 5;
 	void qs(int * vetor, int left, int right)
@@ -26,7 +27,7 @@
 	  void quick(int * vetor, int count)
 	  { //Início da função "quick"
 	    printf("\n *---------------------------------------*");
-	    printf("\n *Vetor original (Antes da classificação*");
+	    printf("\n *Vetor original (Antes da classificacao*");
 	    printf("\n *---------------------------------------*");
 	    for (int z = 0; z <= limite; z++)
 	    {
@@ -48,5 +49,8 @@
 	    {
 	      printf("\n vetor[%d] = %d", z, vetor[z]);
 	    }
+
+        getch();
 	  return 0;
+      
 	}
