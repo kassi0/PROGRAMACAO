@@ -3,15 +3,14 @@
 #include <conio.h>
 #include <windows.h>
 
-float nome[100], 
+int main() {
+    char nome[100], 
     endereco[200], 
     ODP, OEP, 
     OEL, ODL, 
     AR, foto, 
     adicao, 
     telefone;
-
-int dadosClientes(){
 
     printf("Digite o nome do Cliente: ");
     fflush(stdin);
@@ -42,42 +41,23 @@ int dadosClientes(){
     printf("Digite a Adição: ");
     scanf("%i", &adicao);
 
-    return 0;
-}
-
-int gravarDados(){
     FILE *dados;
     dados = fopen("clientes.txt", "a");
-    fprintf(dados,"================================================\n");
-    fprintf(dados,"Nome: %s\n", nome);
-    fprintf(dados,"Endereco: %s\n", endereco);
-    fprintf(dados,"Telefone: %d\n", telefone);
-    fprintf(dados,"Graus para Perto:\n");
-    fprintf(dados,"Olho Direito - %s | Olho Esquerdo: - %s\n", ODP , OEP);
-    fprintf(dados,"Graus para Longe:\n");
-    fprintf(dados,"Olho Direito - %s | Olho Esquerdo: - %s\n", ODL , OEL);
-    fprintf(dados,"AR e FOTO\n");
-    fprintf(dados,"%s | %s\n", AR, foto);
-    fprintf(dados, "Adição: %i\n", adicao);
-    fprintf(dados,"================================================\n");
+    
+    fprintf(dados, "================================================\n");
+    fprintf(dados, "Nome: %s\n", nome,stdout);
+    fprintf(dados, "Endereco: %s\n", endereco,stdout);
+    fprintf(dados, "Telefone: %d\n", telefone,stdout);
+    fprintf(dados, "Graus para Perto:\n");
+    fprintf(dados, "Olho Direito - %s | Olho Esquerdo: - %s\n", ODP , OEP,stdout);
+    fprintf(dados, "Graus para Longe:\n");
+    fprintf(dados, "Olho Direito - %s | Olho Esquerdo: - %s\n", ODL , OEL,stdout);
+    fprintf(dados, "AR e FOTO\n");
+    fprintf(dados, "%s | %s\n", AR, foto,stdout);
+    fprintf(dados, "Adição: %i\n", adicao,stdout);
+    fprintf(dados, "================================================\n");
 
+    fclose(dados);
 
-
-    return 0;
-}
-
-int main() {
-    SetConsoleTitle("Otica Salk Clientes");
-    int condicao=0;
-    dadosClientes();
-    while(condicao==1)
-    {
-        
-
-    }
-    gravarDados();  
-
-    printf("Dados Gravados com Sucesso!");
-
-    return 0;
+    return (0);
 }
