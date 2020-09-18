@@ -7,10 +7,10 @@ int main(void)
 {
     SetConsoleTitle("Printf seu nome em arquivo txt");
   FILE *pont_arq; // cria variável ponteiro para o arquivo
-  char palavra[20]; // variável do tipo string
+  char palavra[200]; // variável do tipo string
   
   //abrindo o arquivo com tipo de abertura w
-  pont_arq = fopen("Nome.txt", "w");
+  pont_arq = fopen("Nome.txt", "w+b");
   
   //testando se o arquivo foi realmente criado
   if(pont_arq == NULL)
