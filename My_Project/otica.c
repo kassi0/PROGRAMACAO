@@ -1,11 +1,21 @@
+/*
+    Cadastro de Clientes Ótica Salk
+    Criação: 17/09/2020
+    Desenvolvedor: Cássio Telles
+    Versão: 1.0.0
+    Ultima Modificação: 18/09/2020
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
 #define MAX 100
 
-char nome[MAX], endereco[MAX], telefone[MAX], AR[MAX], foto[MAX];     
-float ODP, OEP, OEL, ODL, adicao;
+char nome[MAX], endereco[MAX], telefone[MAX], AR[MAX], foto[MAX], dataCompra[MAX], valor[MAX];     
+float ODP, OEP, OEL, ODL, //Graus Perto e Longe
+CODP, COLP, EODP, EOLP, // Cilindrico e Eixo Perto
+CODL, COLL, EODL, EOLL, //Cilindrico e Eixo Longe
+adicao;
 
 void dadosClientes(){
 
@@ -21,17 +31,33 @@ void dadosClientes(){
     fflush(stdin);
     fgets(telefone, MAX, stdin);
 
-    printf("Digite os Graus:\n");
-    printf("*Perto*\n");
+    printf("***Digite os Graus/Cilindrico/Eixo:***\n");
+    printf("\n*Perto*\n");
     printf("Olho Direito: ");
     scanf("%f", &ODP);
+    printf("Cil Direito: ");
+    scanf("%f", &CODP);
+    printf("Eixo Direito: ");
+    scanf("%f", &EODP);
     printf("Olho Esquerdo: ");
     scanf("%f", &OEP);
-    printf("*Longe*\n");
+    printf("Cil Esquerdo: ");
+    scanf("%f", &COLP);
+    printf("Eixo Esquerdo: ");
+    scanf("%f", &EOLP);
+    printf("\n*Longe*\n");
     printf("Olho Direito: ");
     scanf("%f", &ODL);
+    printf("Cil Direito: ");
+    scanf("%f", &CODL);
+    printf("Eixo Direito: ");
+    scanf("%f", &EODL);
     printf("Olho Esquerdo: ");
     scanf("%f", &OEL);
+    printf("Cil Esquerdo: ");
+    scanf("%f", &COLL);
+    printf("Eixo Esquerdo: ");
+    scanf("%f", &EOLL);
     printf("Anti-Reflexo [S/N]: ");
     fflush(stdin);
     fgets(AR, MAX, stdin);
@@ -41,6 +67,14 @@ void dadosClientes(){
 
     printf("Digite a Adicao: ");
     scanf("%f", &adicao);
+
+    printf("Data da Compra: ");
+    fflush(stdin);
+    fgets(dataCompra, MAX, stdin);
+
+    printf("Valor: ");
+    fflush(stdin);
+    fgets(valor, MAX, stdin);
 
 }
 
@@ -57,13 +91,17 @@ void gravarDados(){
     fprintf(dados,"Endereco: %s", endereco);
     fprintf(dados,"Telefone: %s", telefone);
     fprintf(dados,"Graus para Perto:\n");
-    fprintf(dados,"Olho Direito: %.2f | Olho Esquerdo: %.2f\n", ODP , OEP);
+    fprintf(dados,"Olho Direito: %.2f | Cilindrico: %.2f | Eixo: %.2f\n", ODP , CODP, EODP);
+    fprintf(dados,"Olho Esquerdo: %.2f | Cilindrico: %.2f | Eixo: %.2f\n", OEP , COLP, EOLP);
     fprintf(dados,"Graus para Longe:\n");
-    fprintf(dados,"Olho Direito: %2.f | Olho Esquerdo: %.2f\n", ODL , OEL);
+    fprintf(dados,"Olho Direito: %.2f | Cilindrico: %.2f | Eixo: %.2f\n", ODL , CODL, EODL);
+    fprintf(dados,"Olho Esquerdo: %.2f | Cilindrico: %.2f | Eixo: %.2f\n", OEL , COLL, EOLL);
     //fprintf(dados,"AR e FOTO\n");
     fprintf(dados,"AR - %s", AR);
     fprintf(dados,"FOTO - %s", foto);
-    fprintf(dados,"Adição: %.2f\n", adicao);
+    fprintf(dados,"Adição: %.2f", adicao);
+    fprintf(dados, "Data de Compra: %s", dataCompra);
+    fprintf(dados, "Valor: R$%s \n", valor);
     fprintf(dados,"================================================\n\n");
     fclose(dados);
     printf("Dados Gravados com Sucesso!");
