@@ -22,8 +22,8 @@ nomearq = É um ponteiro para uma cadeia de caracteres que forma um nome válido
 modo = Indica como este arquivo será aberto (conforme possibilidade indicada na Tabela 5)
 
 R	Abre um arquivo texto para leitura
-W	Cria um arquivo texto para escrita
-A	Anexa a um arquivo texto
+W	Cria um arquivo texto para escrita, - SEMPRE SOBRESCREVE O ARQUIVO
+A	Anexa a um arquivo texto - ADCIONA O TEXTO SEM SOBRESCREVER
 Rb	Abre um arquivo binário para leitura
 wb	Cria um arquivo binário para escrita
 Ab	Anexa a um arquivo binário
