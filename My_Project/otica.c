@@ -2,22 +2,13 @@
     Cadastro de Clientes Ótica Salk
     Criação: 17/09/2020
     Desenvolvedor: Cássio Telles
-    Versão: 1.0.0
+    Versão: 1.0.1
     Ultima Modificação: 18/09/2020
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
 #define MAX 100
-//Sistema de Cores Abaixo
-#define RED   "\x1B[31m"
-#define GRN   "\x1B[32m"
-#define YEL   "\x1B[33m"
-#define BLU   "\x1B[34m"
-#define MAG   "\x1B[35m"
-#define CYN   "\x1B[36m"
-#define WHT   "\x1B[37m"
-#define RESET "\x1B[0m"
 
 char nome[MAX], endereco[MAX], telefone[MAX], AR[MAX], foto[MAX], dataCompra[MAX] /*valor[MAX]*/;   
 float ODP, OEP, OEL, ODL, //Graus Perto e Longe
@@ -142,6 +133,7 @@ int main() {
     loop1:
     dadosClientes();
     gravarDados();
+    loop2:
     printf("\nDeseja Gravar novamente? S/N \n");
     scanf("%s", &res);
     while (res){
@@ -152,7 +144,7 @@ int main() {
             exit(1);
         }
         else printf("\n Opcao Invalida\n");
-        return 0;
+            goto loop2;
               
     }
     return 0;
