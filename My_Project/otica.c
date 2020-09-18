@@ -2,82 +2,88 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+#define MAX 100
 
-float nome[100], 
-    endereco[200], 
-    ODP, OEP, 
-    OEL, ODL, 
-    AR, foto, 
-    adicao, 
-    telefone;
+char nome[MAX], endereco[MAX], telefone[MAX], AR[MAX], foto[MAX];     
+float ODP, OEP, OEL, ODL, adicao;
 
-int dadosClientes(){
+void dadosClientes(){
 
     printf("Digite o nome do Cliente: ");
     fflush(stdin);
-    fgets(nome,100, stdin);
+    fgets(nome, MAX, stdin);
 
-    printf("Digite Endereço: ");
+    printf("Digite Endereco: ");
     fflush(stdin);
-    fgets(endereco, 200, stdin);
+    fgets(endereco, MAX, stdin);
 
     printf("Telefone de contato (**)XXXXXXXXX: ");
-    scanf("%d", &telefone);
+    fflush(stdin);
+    fgets(telefone, MAX, stdin);
+
     printf("Digite os Graus:\n");
     printf("*Perto*\n");
     printf("Olho Direito: ");
-    scanf("%s", &ODP);
+    scanf("%f", &ODP);
     printf("Olho Esquerdo: ");
-    scanf("%s", &OEP);
+    scanf("%f", &OEP);
     printf("*Longe*\n");
     printf("Olho Direito: ");
-    scanf("%s", &ODL);
+    scanf("%f", &ODL);
     printf("Olho Esquerdo: ");
-    scanf("%s", &OEL);
+    scanf("%f", &OEL);
     printf("Anti-Reflexo [S/N]: ");
-    scanf("%s", &AR);
+    fflush(stdin);
+    fgets(AR, MAX, stdin);
     printf("FotoSensivel [S/N]: ");
-    scanf("%s", &foto);
+    fflush(stdin);
+    fgets(foto, MAX, stdin);
 
-    printf("Digite a Adição: ");
-    scanf("%i", &adicao);
+    printf("Digite a Adicao: ");
+    scanf("%f", &adicao);
 
-    return 0;
 }
 
-int gravarDados(){
+void gravarDados(){
     FILE *dados;
     dados = fopen("clientes.txt", "a");
+    if (dados == NULL) // Se nào conseguiu criar
+    {
+     printf("Problemas na CRIACAO do arquivo\n");
+     EXIT_FAILURE;
+    }
     fprintf(dados,"================================================\n");
-    fprintf(dados,"Nome: %s\n", nome);
-    fprintf(dados,"Endereco: %s\n", endereco);
-    fprintf(dados,"Telefone: %d\n", telefone);
+    fprintf(dados,"Nome: %s", nome);
+    fprintf(dados,"Endereco: %s", endereco);
+    fprintf(dados,"Telefone: %s", telefone);
     fprintf(dados,"Graus para Perto:\n");
-    fprintf(dados,"Olho Direito - %s | Olho Esquerdo: - %s\n", ODP , OEP);
+    fprintf(dados,"Olho Direito: %.2f | Olho Esquerdo: %.2f\n", ODP , OEP);
     fprintf(dados,"Graus para Longe:\n");
-    fprintf(dados,"Olho Direito - %s | Olho Esquerdo: - %s\n", ODL , OEL);
-    fprintf(dados,"AR e FOTO\n");
-    fprintf(dados,"%s | %s\n", AR, foto);
-    fprintf(dados, "Adição: %i\n", adicao);
-    fprintf(dados,"================================================\n");
-
-
-
-    return 0;
+    fprintf(dados,"Olho Direito: %2.f | Olho Esquerdo: %.2f\n", ODL , OEL);
+    //fprintf(dados,"AR e FOTO\n");
+    fprintf(dados,"AR - %s", AR);
+    fprintf(dados,"FOTO - %s", foto);
+    fprintf(dados,"Adição: %.2f\n", adicao);
+    fprintf(dados,"================================================\n\n");
+    fclose(dados);
+    printf("Dados Gravados com Sucesso!");
 }
 
 int main() {
     SetConsoleTitle("Otica Salk Clientes");
-    int condicao=0;
+    //int condicao=1;
+    char res;
     dadosClientes();
-    while(condicao==1)
-    {
+    gravarDados();
+    printf("\nDeseja Gravar novamente? S/N \n");
+    scanf("%s", &res);
+    while (res){
+        if (res== 's'){
+            return main();
+        }
+        else
+        exit(1);
         
-
     }
-    gravarDados();  
-
-    printf("Dados Gravados com Sucesso!");
-
     return 0;
 }

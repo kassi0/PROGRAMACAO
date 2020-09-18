@@ -1,2 +1,5 @@
 {
+    "files.associations": {
+        "CORES_CMD.C": "cpp"
+    }
 }
