@@ -42,3 +42,6 @@ numero_impar = 5
 
 if 'a' in 'banana':
     print ('Tem')
+
+
+"[4] - Linhas em Branco"
