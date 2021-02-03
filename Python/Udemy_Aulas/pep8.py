@@ -44,4 +44,36 @@ if 'a' in 'banana':
     print ('Tem')
 
 
-"[4] - Linhas em Branco"
+"""
+[4] - Linhas em Branco"
+ - Separear Funções e definições de classe com duas linhas em branco;
+ - Métodos dentro de uma classe devem ser separados com uma única linha em branco
+[5] - Imports
+ - Importes devem ser sempre feitos em linhas separadas;
+
+"""
+# Import Errado
+
+import sys, os
+
+# Import Certo
+
+import sys
+import os
+
+# Não há problemas em utilizar:
+
+from types import StringType, ListType
+
+# Caso tenha muitos imports de um mesmo pacote, recomenda-se fazer:
+
+from types import (
+    StringType,
+    ListType,
+    SetType,
+    OutroType
+)
+
+# Imports devem ser colocados no topo do arquivo, logo depois de quaisquer comentários ou 
+# docstrings e antes de constantes e variáveis globais.
+
