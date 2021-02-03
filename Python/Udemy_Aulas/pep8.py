@@ -77,3 +77,31 @@ from types import (
 # Imports devem ser colocados no topo do arquivo, logo depois de quaisquer comentários ou 
 # docstrings e antes de constantes e variáveis globais.
 
+"""
+[6] -  Espaços em expressões de Instruções
+"""
+# Não faça:
+
+funcao ( algo[ 1 ], { outro: 2 } )
+
+# Faça:
+
+funcao(algo[1], {outro: 2})
+
+# Não faça:
+
+algo  (1)
+
+# Faça:
+
+algo(1)
+
+# Não faça:
+
+dict [ 'chave'] = lista [indice]
+
+# Faça:
+
+dict['chave'] = lista[indice]
+
+# Não faça:
