@@ -1,3 +1,5 @@
-file = open('testfile.txt', 'r') 
-for line in file: 
-    print line,
+import json
+
+with open('contas.json') as json_data:
+    data = json.load(json_data)
+    print (data)
