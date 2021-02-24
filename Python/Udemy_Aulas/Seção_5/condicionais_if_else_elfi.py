@@ -27,5 +27,8 @@ else{
 if idade < 18:
     print('Menor de idade')
     print(idade)
-else:
+if (idade >= 18) & (idade <= 65):
     print('Maior de Idade')
+elif idade > 65:
+    print('Idoso')
+
