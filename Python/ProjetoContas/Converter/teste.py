@@ -1,5 +1,6 @@
-import json
+file = open('contas.txt')
 
-with open('contas.json') as json_data:
-    data = json.load(json_data)
-    print (data)
+for line in enumerate(file):
+    print(line)
+
+file.close()
