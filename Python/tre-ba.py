@@ -1,36 +1,51 @@
 import subprocess
 import getpass
-print('ACESSO COMPUTADOR TRE-BA')
+import os
+
 opcao = 0
 
 while opcao != 4:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print('##################################################################################')
+    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('#              SOFTWARE DE ACESSO REMOTO AOS COMPUTADORES TRE-BA                 #')
+    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('##################################################################################\n\n')
+    print('SELECIONE A LOCALIZAÇÃO ONDE O SEU COMPUTADOR SE ENCONTRA!\n')
     print('''    [ 1 ] COMPUTADOR SECRETARIA
     [ 2 ] COMPUTADOR ZE CAPITAL
     [ 3 ] COMPUTADOR ZE INTERIOR
     [ 4 ] SAIR''')
-    opcao = int(input('Qual a Opção desejada? '))
+    opcao = int(input('\n\nQual a Opção desejada? '))
 
     if opcao == 1:
-        print('COMPUTADOR SECRETARIA\n')
-        computador = input('Nome do Computador: ')
+        print('\nCOMPUTADOR SECRETARIA \n')
+        print('EXEMPLO: "rbawSECRETARIA01"')
+        computador = input('Digite o Nome do Computador: ')
         titulo = input('Título de Eleitor: ')
-        pswd = getpass.getpass('Password:')
+        pswd = getpass.getpass('Senha:')
         processo = subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"],shell=True)
 
     elif opcao == 2:
-        print('COMPUTADOR ZE CAPITAL\n')
-        computador = input('Nome do Computador: ')
-        titulo = input('Título de Eleitor: ')
-        pswd = getpass.getpass('Password:')
-        processo = subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"],shell=True)
+        print('\nCOMPUTADOR ZE CAPITAL\n')
+        print('EXEMPLO: "zbaZNEwks01"')
+        computador = input('Digite o Nome do Computador: ')
+        #titulo = input('Título de Eleitor: ')
+        #pswd = getpass.getpass('Password:')
+        processo = subprocess.call([f"rdesktop -d tre-ba.gov.br -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"],shell=True)
 
     elif opcao == 3:
-        print('COMPUTADOR ZE INTERIOR\n')
-        ze = input('Zona Eleitoral: ')
-        std = input('Número da STD (s/ 0): ')
-        titulo = input('Título de Eleitor: ')
-        pswd = getpass.getpass('Password:')
-        processo = subprocess.call([f"rdesktop -u {titulo} -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote 10.171.{ze}.{std}"],shell=True)
+        print('\nCOMPUTADOR ZE INTERIOR\n')
+        print('Número referente a seu cartório: Exemplo - 192, 21, 205')
+        ze = input('Digite o número da Zona Eleitoral: ')
+        print('\nNúmero referente ao Computador utilizado: Exemplo - 1, 2, 3, 4, 5, 15')
+        std = input('Digite o Número da STD: ')
+        #titulo = input('Título de Eleitor: ')
+        #pswd = getpass.getpass('Password:')
+        processo = subprocess.call([f"rdesktop -g 95% -a 24 -z -x lan -r sound:remote 10.171.{ze}.{std}"],shell=True)
 
     elif opcao == 4:
         print('Finalizando...')
