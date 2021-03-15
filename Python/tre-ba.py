@@ -7,12 +7,11 @@ opcao = 0
 while opcao != 4:
     os.system('cls' if os.name == 'nt' else 'clear')
     print('##################################################################################')
-    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('#                                  FAKEJEC                                       #')
     print('#              SOFTWARE DE ACESSO REMOTO AOS COMPUTADORES TRE-BA                 #')
-    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
-    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
-    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
-    print('#                      ACESSO COMPUTADOR TRE-BA - FAKEJEC                        #')
+    print('#                  PRECISANDO DE SUPORTE LIGUE (71)3373-7009                     #')
+    print('#                        E-MAIL: cestic@tre-ba.jus.br                            #')
+    print('#                             www.tre-ba.jus.br                                  #')
     print('##################################################################################\n\n')
     print('SELECIONE A LOCALIZAÇÃO ONDE O SEU COMPUTADOR SE ENCONTRA!\n')
     print('''    [ 1 ] COMPUTADOR SECRETARIA
