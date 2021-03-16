@@ -1,7 +1,7 @@
-from PyQt5 import uic,QtWidgets
+from PyQt5 import uic,QtWidgets,QtGui
+from PyQt5.QtWidgets import QMessageBox, QPushButton
 import subprocess
-import getpass
-import os
+
 
 def chama_secretaria():
 
@@ -40,13 +40,24 @@ def chama_zeinterior():
     zeinterior.backButton.clicked.connect(zeinterior.close)
 
     def processo():
+
         ze = zeinterior.ze.text()
+        try:
+            ze = int(ze)
+        except Exception:
+            QMessageBox.about(zeinterior, "Erro!", "Utilize Apenas números!")
+            pass
         std = zeinterior.std.text()
-        subprocess.call([f"rdesktop -g 95% -a 24 -z -x lan -r sound:remote 10.171.{ze}.{std}"], shell=True)
+        try:
+            std = int(std)
+        except Exception:
+            QMessageBox.about(zeinterior, "Error!", "Utilize Apenas números!")
+            pass
+
+        subprocess.call([f"rdesktop -g 95% -a 24 -z -x lan -r sound:remote 10.171.{ze}.{std} -cert-ignore"], shell=True)
+
 
     zeinterior.connectBut.clicked.connect(processo)
-
-
 
 
 app=QtWidgets.QApplication([])
