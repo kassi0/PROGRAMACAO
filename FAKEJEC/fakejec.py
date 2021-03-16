@@ -4,6 +4,7 @@ import getpass
 import os
 
 def chama_secretaria():
+
     tela_selecao.hide()
     secretaria.show()
     secretaria.backButton.clicked.connect(tela_selecao.show)
@@ -26,10 +27,8 @@ def chama_zecapital():
     zecapital.backButton.clicked.connect(zecapital.close)
 
     def processo():
-        computador = secretaria.computador.text()
-        titulo = secretaria.titulo.text()
-        pswd = secretaria.pswd.text()
-        subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"], shell=True)
+        computador = zecapital.computador.text()
+        subprocess.call([f"rdesktop -d tre-ba.gov.br -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br -cert-ignore"], shell=True)
 
     zecapital.connectBut.clicked.connect(processo)
 
@@ -41,10 +40,9 @@ def chama_zeinterior():
     zeinterior.backButton.clicked.connect(zeinterior.close)
 
     def processo():
-        computador = secretaria.computador.text()
-        titulo = secretaria.titulo.text()
-        pswd = secretaria.pswd.text()
-        subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"], shell=True)
+        ze = zeinterior.ze.text()
+        std = zeinterior.std.text()
+        subprocess.call([f"rdesktop -g 95% -a 24 -z -x lan -r sound:remote 10.171.{ze}.{std}"], shell=True)
 
     zeinterior.connectBut.clicked.connect(processo)
 
@@ -53,9 +51,13 @@ def chama_zeinterior():
 
 app=QtWidgets.QApplication([])
 tela_selecao=uic.loadUi("fakejec.ui")
+tela_selecao.setGeometry(700,200,500,600)
 secretaria=uic.loadUi("secretaria.ui")
+secretaria.setGeometry(700,200,500,600)
 zecapital=uic.loadUi("zecapital.ui")
+zecapital.setGeometry(700,200,500,600)
 zeinterior=uic.loadUi("zeinterior.ui")
+zeinterior.setGeometry(700,200,500,600)
 tela_selecao.pushButton.clicked.connect(chama_secretaria)
 tela_selecao.pushButton_2.clicked.connect(chama_zecapital)
 tela_selecao.pushButton_3.clicked.connect(chama_zeinterior)
