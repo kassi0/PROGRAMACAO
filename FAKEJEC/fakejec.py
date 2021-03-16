@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Criado em - 16/03/2021
+Author - Cássio Telles
+Versão 1.1
+
+"""
 from PyQt5 import uic,QtWidgets,QtGui
 from PyQt5.QtWidgets import QMessageBox, QPushButton
 import subprocess

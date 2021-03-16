@@ -1,3 +1,9 @@
+"""
+Criado em - 15/03/2021
+Author - Cássio Telles
+Versão 1.0
+
+"""
 import subprocess
 import getpass
 import os

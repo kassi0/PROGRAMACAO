@@ -61,8 +61,22 @@ for valor in enumerate(nome):
 
 for valor in enumerate(nome): 
     print(valor[0])  # Somente as Strings
+    
+    
+qtd = int(input('Quantas vezes vamos rodar? '))
+soma = 0
+
+for n in range(1, qtd+1):
+    num = int(input(f'Informe o {n} / {qtd} valor: '))
+    soma = soma + num
+print(f'A Soma é {soma}')
+
+
+for letra in nome:
+    print(letra, end='')
+    
 """
 
-for valor in enumerate(nome):
-    print(valor)
+
+
 
