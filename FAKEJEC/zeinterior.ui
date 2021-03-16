@@ -91,7 +91,7 @@
      <string>Justiça Eleitoral</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="connectBut">
     <property name="geometry">
      <rect>
       <x>347</x>

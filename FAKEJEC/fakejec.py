@@ -19,16 +19,19 @@ def chama_secretaria():
     secretaria.connectBut.clicked.connect(processo)
 
 
-
-
-
 def chama_zecapital():
     tela_selecao.hide()
     zecapital.show()
     zecapital.backButton.clicked.connect(tela_selecao.show)
     zecapital.backButton.clicked.connect(zecapital.close)
 
+    def processo():
+        computador = secretaria.computador.text()
+        titulo = secretaria.titulo.text()
+        pswd = secretaria.pswd.text()
+        subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"], shell=True)
 
+    zecapital.connectBut.clicked.connect(processo)
 
 
 def chama_zeinterior():
@@ -36,6 +39,14 @@ def chama_zeinterior():
     zeinterior.show()
     zeinterior.backButton.clicked.connect(tela_selecao.show)
     zeinterior.backButton.clicked.connect(zeinterior.close)
+
+    def processo():
+        computador = secretaria.computador.text()
+        titulo = secretaria.titulo.text()
+        pswd = secretaria.pswd.text()
+        subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"], shell=True)
+
+    zeinterior.connectBut.clicked.connect(processo)
 
 
 
