@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Criado em - 16/03/2021
 Author - Cássio Telles
@@ -22,7 +22,7 @@ def chama_secretaria():
         computador = secretaria.computador.text()
         titulo = secretaria.titulo.text()
         pswd = secretaria.pswd.text()
-        subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br"], shell=True)
+        subprocess.call([f"rdesktop -u {titulo} -d tre-ba.gov.br -p {pswd} -g 95% -a 24 -z -x lan -r sound:remote {computador}.tre-ba.gov.br -cert-ignore"], shell=True)
 
     secretaria.connectBut.clicked.connect(processo)
 
