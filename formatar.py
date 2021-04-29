@@ -1,3 +1,6 @@
+"""
+Feito por Cássio Telles
+"""
 import subprocess
 import os.path
 import time
