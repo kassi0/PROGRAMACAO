@@ -17,22 +17,22 @@ while (True):
     os.system('cls' if os.name == 'nt' else 'clear')
     if isExistb is True:
         print('\nPenDrive conectado, Formatando /DEV/SDB!\n')
-        subprocess.call(['mkfs.vfat -I -v -n "JEC-FORMATADO" /dev/sdb'], shell=True)
+        subprocess.call(['mkfs.vfat -I -v -n "FORMATADO" /dev/sdb'], shell=True)
         print("\nPendrive /DEV/SDB Formatado indo para Próximo")
         time.sleep(5)
     if isExistc is True:
         print('\nPenDrive conectado, Formatando /DEV/SDC!\n')
-        subprocess.call(['mkfs.vfat -I -v -n "JEC-FORMATADO" /dev/sdc'], shell=True)
+        subprocess.call(['mkfs.vfat -I -v -n "FORMATADO" /dev/sdc'], shell=True)
         print("\nPendrive /DEV/SDC Formatado indo para Próximo")
         time.sleep(5)
     if isExistd is True:
         print('\nPenDrive conectado, Formatando /DEV/SDD!\n')
-        subprocess.call(['mkfs.vfat -I -v -n "JEC-FORMATADO" /dev/sdd'], shell=True)
+        subprocess.call(['mkfs.vfat -I -v -n "FORMATADO" /dev/sdd'], shell=True)
         print("\nPendrive /DEV/SDD Formatado indo para Próximo")
         time.sleep(5)
     if isExiste is True:
         print('\nPenDrive conectado, Formatando /DEV/SDE!\n')
-        subprocess.call(['mkfs.vfat -I -v -n "JEC-FORMATADO" /dev/sde'], shell=True)
+        subprocess.call(['mkfs.vfat -I -v -n "FORMATADO" /dev/sde'], shell=True)
         print("\nPendrive /DEV/SDE Formatado Aguardando próxima Remessa")
         time.sleep(50)
 

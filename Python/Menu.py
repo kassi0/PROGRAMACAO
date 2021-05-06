@@ -55,12 +55,12 @@ while opcao != 10:
     elif opcao == 7:
         print ('RBAWCTIS00 Normal\n')
         #computador = input ('Nome do Computador: ')
-        processo = subprocess.call(["rdesktop -u 109649460507 -d tre-ba.gov.br -p 14d01m1986a6 -g 1270x972 -a 24 -z -x lan -r sound:remote rbawctis00.tre-ba.gov.br"], shell=True)
+        processo = subprocess.call(["rdesktop -u 109649460507 -d tre-ba.gov.br -p 14d01m1986a7 -g 1270x972 -a 24 -z -x lan -r sound:remote rbawctis00.tre-ba.gov.br"], shell=True)
     
     elif opcao == 8:
         print ('RBAWCTIS00 Admin\n')
         #computador = input ('Nome do Computador: ')
-        processo = subprocess.call(["rdesktop -u a109649460507 -d tre-ba.gov.br -p 14d01m1986a6 -g 1270x972 -a 24 -z -x lan -r sound:remote rbawctis00.tre-ba.gov.br"], shell=True)
+        processo = subprocess.call(["rdesktop -u a109649460507 -d tre-ba.gov.br -p 14d01m1986a7 -g 1270x972 -a 24 -z -x lan -r sound:remote rbawctis00.tre-ba.gov.br"], shell=True)
 
     elif opcao == 9:
         print ('FPING com Range de IPS\n')
