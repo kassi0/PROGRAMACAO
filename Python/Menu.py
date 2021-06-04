@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import subprocess
 print ('#### Menu de Serviços Linux >>> Windows ####')
 opcao = 0
