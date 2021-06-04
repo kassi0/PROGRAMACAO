@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 import subprocess
+import os
+os.system('cls' if os.name == 'nt' else 'clear')
 print ('#### Menu de Serviços Linux >>> Windows ####')
 opcao = 0
 while opcao != 10:
@@ -13,7 +15,7 @@ while opcao != 10:
     [ 8 ] RBAWCTIS00 A
     [ 9 ] FPING
     [ 10 ] Sair''')
-#n1 = int(input('Selecione a Opção desejada: '))
+
     opcao = int(input('Qual a Opção desejada? '))
     if opcao == 1:
         print ('Desligar Computador\n')
